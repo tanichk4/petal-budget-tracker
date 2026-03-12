@@ -1,0 +1,96 @@
+@layer components {
+  .card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--color-pink) 55%, var(--color-lavender)) 0%,
+      color-mix(in oklch, var(--color-lavender) 55%, var(--color-pink)) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite, fadeIn 400ms var(--transition-spring) both;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-height: 200px;
+  }
+
+  /* Decorative sparkle blobs */
+  .card::before,
+  .card::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .card::before {
+    width: 120px;
+    height: 120px;
+    background: color-mix(in oklch, white 20%, transparent);
+    top: -30px;
+    right: -30px;
+    animation: sparkle 4s ease-in-out infinite;
+  }
+
+  .card::after {
+    width: 80px;
+    height: 80px;
+    background: color-mix(in oklch, white 15%, transparent);
+    bottom: -20px;
+    right: 60px;
+    animation: sparkle 6s ease-in-out infinite reverse;
+  }
+
+  .sparkle {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-6);
+    font-size: 28px;
+    animation: sparkle 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .heading {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sub {
+    font-size: var(--font-size-sm);
+    color: color-mix(in oklch, white 85%, transparent);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta {
+    margin-top: auto;
+    padding: var(--space-4);
+    background: white;
+    color: var(--color-text);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    text-align: center;
+    transition: transform var(--transition-spring), box-shadow var(--transition-base);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 24px oklch(0% 0 0 / 0.15);
+  }
+
+  .cta:active {
+    transform: translateY(0) scale(0.99);
+    animation: pop 200ms ease;
+  }
+}

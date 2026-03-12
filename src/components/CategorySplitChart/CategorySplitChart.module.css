@@ -1,0 +1,92 @@
+@layer components {
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-card);
+    border: 1.5px solid var(--color-border);
+    animation: fadeIn 350ms var(--transition-spring) both;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-6);
+  }
+
+  .titleIcon {
+    font-size: 18px;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .label {
+    font-size: var(--font-size-sm);
+    color: var(--color-muted);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .barTrack {
+    height: 12px;
+    background: var(--color-surface-3);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: var(--bar-color, var(--color-subtle));
+    animation: barFill 700ms var(--transition-smooth) both;
+    position: relative;
+    min-width: 4px;
+  }
+
+  /* Shimmer overlay on bar */
+  .bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in oklch, white 30%, transparent) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2s 700ms infinite linear;
+    background-size: 200% 100%;
+  }
+
+  .empty {
+    font-size: var(--font-size-sm);
+    color: var(--color-muted);
+    text-align: center;
+    padding: var(--space-6) 0;
+  }
+
+  /* Bar colors per category */
+  .bar[data-category="Bills"]         { --bar-color: var(--color-bills); }
+  .bar[data-category="Entertainment"] { --bar-color: var(--color-entertainment); }
+  .bar[data-category="Food"]          { --bar-color: var(--color-food); }
+  .bar[data-category="Health"]        { --bar-color: var(--color-health); }
+  .bar[data-category="Other"]         { --bar-color: var(--color-other); }
+  .bar[data-category="Shopping"]      { --bar-color: var(--color-shopping); }
+  .bar[data-category="Travel"]        { --bar-color: var(--color-travel); }
+}

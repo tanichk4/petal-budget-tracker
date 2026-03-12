@@ -1,0 +1,76 @@
+@layer tokens {
+  :root {
+    /* Colors — using oklch for perceptual uniformity */
+    --color-bg: oklch(96% 0.015 60);
+    --color-surface: oklch(100% 0 0);
+    --color-surface-2: oklch(98% 0.012 60);
+    --color-surface-3: oklch(95% 0.02 60);
+
+    --color-pink: oklch(75% 0.12 15);
+    --color-pink-light: oklch(92% 0.04 15);
+    --color-pink-mid: oklch(85% 0.08 15);
+    --color-lavender: oklch(72% 0.12 290);
+    --color-lavender-light: oklch(92% 0.04 290);
+
+    --color-text: oklch(20% 0.01 60);
+    --color-muted: oklch(58% 0.01 60);
+    --color-subtle: oklch(80% 0.01 60);
+    --color-border: oklch(90% 0.01 60);
+
+    /* Category colors */
+    --color-bills: oklch(72% 0.08 230);
+    --color-entertainment: oklch(72% 0.1 145);
+    --color-food: oklch(75% 0.12 15);
+    --color-health: oklch(75% 0.1 355);
+    --color-other: oklch(72% 0.04 60);
+    --color-shopping: oklch(72% 0.12 290);
+    --color-travel: oklch(72% 0.1 210);
+
+    /* Category tints (20% opacity backgrounds) */
+    --color-bills-tint: color-mix(in oklch, var(--color-bills) 18%, transparent);
+    --color-entertainment-tint: color-mix(in oklch, var(--color-entertainment) 18%, transparent);
+    --color-food-tint: color-mix(in oklch, var(--color-food) 18%, transparent);
+    --color-health-tint: color-mix(in oklch, var(--color-health) 18%, transparent);
+    --color-other-tint: color-mix(in oklch, var(--color-other) 18%, transparent);
+    --color-shopping-tint: color-mix(in oklch, var(--color-shopping) 18%, transparent);
+    --color-travel-tint: color-mix(in oklch, var(--color-travel) 18%, transparent);
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+
+    /* Border radius */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-card: 0 2px 16px oklch(0% 0 0 / 0.05), 0 1px 3px oklch(0% 0 0 / 0.04);
+    --shadow-elevated: 0 8px 40px oklch(0% 0 0 / 0.1), 0 2px 8px oklch(0% 0 0 / 0.06);
+    --shadow-overlay: 0 20px 60px oklch(0% 0 0 / 0.18);
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-size-xs: clamp(11px, 1.5vw, 12px);
+    --font-size-sm: clamp(13px, 1.8vw, 14px);
+    --font-size-base: clamp(14px, 2vw, 16px);
+    --font-size-lg: clamp(16px, 2.2vw, 18px);
+    --font-size-xl: clamp(18px, 2.5vw, 22px);
+    --font-size-2xl: clamp(22px, 3vw, 28px);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-smooth: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}

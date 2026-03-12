@@ -1,0 +1,161 @@
+@layer components {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: color-mix(in oklch, var(--color-bg) 85%, transparent);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+  }
+
+  .brandIcon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-pink-light), var(--color-lavender-light));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .brandText h1 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.1;
+  }
+
+  .brandText p {
+    font-size: var(--font-size-xs);
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+
+  .searchWrapper {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-subtle);
+    pointer-events: none;
+    font-size: 16px;
+  }
+
+  .searchInput {
+    width: 100%;
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+    padding: var(--space-3) var(--space-4) var(--space-3) 44px;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base), width var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+  }
+
+  .searchInput:focus {
+    border-color: var(--color-pink);
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-pink) 12%, transparent),
+                var(--shadow-card);
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+  }
+
+  .totalBadge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
+    box-shadow: var(--shadow-card);
+  }
+
+  .totalIcon {
+    width: 28px;
+    height: 28px;
+    background: var(--color-lavender-light);
+    border-radius: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .totalInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .totalLabel {
+    font-size: var(--font-size-xs);
+    color: var(--color-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .totalAmount {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .signOutBtn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-size: 16px;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-card);
+  }
+
+  .signOutBtn:hover {
+    color: var(--color-text);
+    border-color: var(--color-subtle);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-elevated);
+  }
+}
